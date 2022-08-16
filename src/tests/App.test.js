@@ -43,12 +43,12 @@ describe('Tests for App.js', () => {
 
   it('redirected to Not Found page when entering unknown URL', () => {
     const { history } = renderWithRouter(<App />);
-    const TEXT_NOT_FOUND = /Page requested not found Crying emoji/i;
+    const TEXT_NOT_FOUND = /Page requested not found/i;
 
     history.push('/notFoundUrl');
-    const notFoundText = screen.getByRole('heading', { name: TEXT_NOT_FOUND,
+    const notFound = screen.getByRole('heading', { name: TEXT_NOT_FOUND,
       level: 2 });
 
-    expect(notFoundText).toBeInTheDocument();
+    expect(notFound).toBeInTheDocument();
   });
 });

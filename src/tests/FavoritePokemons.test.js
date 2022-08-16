@@ -7,7 +7,7 @@ describe('Tests for page FavoritePokemons', () => {
   it('the message No favorite pokemon found is displayed on the screen', () => {
     renderWithRouter(<FavoritePokemons />);
 
-    const notFoundText = screen.getByText('No favorite pokemon found');
-    expect(notFoundText).toBeInTheDocument();
+    const notFound = screen.getByText('No favorite pokemon found');
+    expect(notFound).toBeInTheDocument();
   });
 });
