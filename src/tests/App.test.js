@@ -4,7 +4,7 @@ import React from 'react';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
-describe('Tests for component App.js', () => {
+describe('Tests for App.js', () => {
   it('contains a fixed set of navigation links', () => {
     renderWithRouter(<App />);
 
@@ -43,10 +43,11 @@ describe('Tests for component App.js', () => {
 
   it('redirected to Not Found page when entering unknown URL', () => {
     const { history } = renderWithRouter(<App />);
-    const TEXT_NOT_FOUND = 'Page requested not found Crying emoji';
+    const TEXT_NOT_FOUND = /Page requested not found Crying emoji/i;
 
     history.push('/notFoundUrl');
-    const notFoundText = screen.getByRole('heading', { name: TEXT_NOT_FOUND, level: 2 });
+    const notFoundText = screen.getByRole('heading', { name: TEXT_NOT_FOUND,
+      level: 2 });
 
     expect(notFoundText).toBeInTheDocument();
   });
