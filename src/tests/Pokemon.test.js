@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-// import userEvent from '@testing-library/user-event';
 import React from 'react';
 import App from '../App';
 import data from '../data';
@@ -43,9 +42,9 @@ describe('Tests for component Pokemon.js', () => {
     const detailsPokemon = screen.getByRole('link', { name: 'More details' });
     userEvent.click(detailsPokemon);
 
-    const favoritePokemonLink = screen.getByLabelText('Pokémon favoritado?');
-    expect(favoritePokemonLink).toBeInTheDocument();
-    userEvent.click(favoritePokemonLink);
+    const favoritePokemonInput = screen.getByLabelText('Pokémon favoritado?');
+    expect(favoritePokemonInput).toBeInTheDocument();
+    userEvent.click(favoritePokemonInput);
 
     const favoriteIcon = screen.getByAltText(`${namePokemon} is marked as favorite`);
     expect(favoriteIcon).toBeInTheDocument();
