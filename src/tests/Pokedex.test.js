@@ -34,7 +34,7 @@ describe('Tests for page Pokedex', () => {
     expect(screen.getByText(firstPokemon)).toBeInTheDocument();
   });
 
-  it('There must be a filter button for each type of pokemon, without repetition', () => {
+  it('there must be a filter button for each type of pokemon, without repetition', () => {
     renderWithRouter(<App />);
     const NUMBER_OF_FILTERS = 7;
     const FILTERS = ['Electric', 'Fire', 'Bug', 'Poison', 'Psychic', 'Normal', 'Dragon'];
@@ -44,6 +44,15 @@ describe('Tests for page Pokedex', () => {
 
     filterButtons.forEach((filter, index) => {
       expect(filter.innerHTML).toBe(FILTERS[index]);
+    });
+  });
+
+  it('all filter buttons are clickable', () => {
+    renderWithRouter(<App />);
+
+    const filterButtons = screen.getAllByTestId('pokemon-type-button');
+    filterButtons.forEach((filter) => {
+      userEvent.click(filter);
     });
   });
 });
