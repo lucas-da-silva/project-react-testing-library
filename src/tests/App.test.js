@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import App from '../App';
-import renderWithRouter from './renderWithRouter';
+import renderWithRouter from '../renderWithRouter';
 
 describe('Tests for App.js', () => {
   it('contains a fixed set of navigation links', () => {

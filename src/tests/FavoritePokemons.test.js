@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import React from 'react';
 import FavoritePokemons from '../pages/FavoritePokemons';
-import renderWithRouter from './renderWithRouter';
+import renderWithRouter from '../renderWithRouter';
 
 describe('Tests for page FavoritePokemons', () => {
   it('the message No favorite pokemon found is displayed on the screen', () => {

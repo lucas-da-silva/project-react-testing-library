@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import React from 'react';
 import App from '../App';
 import data from '../data';
-import renderWithRouter from './renderWithRouter';
+import renderWithRouter from '../renderWithRouter';
 
 describe('Tests for component Pokemon.js', () => {
   it('should be render a letter with the information of a certain pokémon', () => {
